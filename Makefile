@@ -101,6 +101,9 @@ freebsd:
 amiga68k:
 	$(MAKE) all CC="gcc -IADE:netinclude " O=.o X= \
 	CFLAGS="-DUNIX -m68020" LFLAGS="-LADE:lib" LIBS="-lpthread" OUT=-o
+linux-static:
+	$(MAKE) all CC="$(CC) -O -s" O=.o X= \
+	CFLAGS="-DUNIX" LFLAGS="-static" LIBS="-lpthread" OUT=-o
 
 INC = -I.
 
